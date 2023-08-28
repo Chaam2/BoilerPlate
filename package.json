@@ -22,7 +22,16 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write --cache .",
-    "lint" : "eslint --cache ."
+    "lint": "eslint --cache .",
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "*.tsx": [
+      "npm run format"
+    ],
+    "*.ts": [
+      "npm run format"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +53,8 @@
   },
   "devDependencies": {
     "eslint-config-prettier": "^9.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
     "prettier": "^3.0.2"
   }
 }
